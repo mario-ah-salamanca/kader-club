@@ -8,6 +8,7 @@ The format follows a simple human-readable structure.
 
 ### Added
 
+- Supabase local project setup and initial First Collection Loop schema migration.
 - Initial GitHub project management structure.
 - Product strategy documentation.
 - MVP roadmap.

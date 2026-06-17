@@ -65,3 +65,15 @@ Finish **Phase 0** and **Phase 1**:
 - Define seed catalog CSV format
 - Build authenticated foundation
 - Prepare Sprint 1 backlog
+
+## Local Supabase Setup
+
+This repository uses the Supabase CLI through `npx`:
+
+```bash
+npx supabase start
+npx supabase migration up
+```
+
+Use `.env.example` as the local environment template. Keep
+`SUPABASE_SERVICE_ROLE_KEY` server-side only.

@@ -108,6 +108,35 @@ Allowed values:
 - `open_to_offers`
 - `actively_trading`
 
+## Profile Trade Availability
+
+Allowed values:
+
+- `not_trading`
+- `open_to_trades`
+- `actively_trading`
+
+## Card Condition
+
+Allowed values:
+
+- `poor`
+- `fair`
+- `good`
+- `very_good`
+- `excellent`
+- `near_mint`
+- `mint`
+- `gem_mint`
+
+## Ownership and Access Rules
+
+- `profiles.user_id` references `auth.users.id` and is unique.
+- `user_cards.user_id` references `auth.users.id`.
+- Catalog tables are readable by authenticated users.
+- Catalog writes require the database-backed `admin` profile role.
+- Users can manage only their own profile and collection rows.
+
 ## Seed Catalog CSV Fields
 
 Minimum recommended fields:

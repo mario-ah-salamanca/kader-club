@@ -1,0 +1,1 @@
+-- Seed catalog rows will be added in the curated catalog import task.
