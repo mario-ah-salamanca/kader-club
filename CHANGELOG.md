@@ -8,6 +8,9 @@ The format follows a simple human-readable structure.
 
 ### Added
 
+- Next.js App Router foundation with strict TypeScript, lint, typecheck, and
+  build scripts.
+- Supabase Auth signup, login, logout, cookie refresh, and protected app layout.
 - Supabase local project setup and initial First Collection Loop schema migration.
 - Initial GitHub project management structure.
 - Product strategy documentation.

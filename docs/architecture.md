@@ -54,6 +54,25 @@ src/
 └── tests/
 ```
 
+## Current App Foundation
+
+The MVP app foundation is a Next.js App Router application with strict
+TypeScript. Supabase Auth is integrated through `@supabase/ssr` helpers under
+`src/lib/supabase/`.
+
+Current auth boundaries:
+
+- Public routes live under `src/app/(auth)/`.
+- Auth mutations live in `src/features/auth/actions.ts` and authenticate through
+  Supabase server-side clients.
+- Protected app pages live under `src/app/(protected)/app/`.
+- The protected app layout verifies identity server-side with
+  `supabase.auth.getClaims()` before rendering private app content.
+- `middleware.ts` refreshes Supabase auth cookies on app requests.
+
+Profile onboarding, catalog search, collection management, and admin workflows
+remain separate Sprint 1 tasks.
+
 ## Security Principles
 
 - Enforce server-side authorization.
