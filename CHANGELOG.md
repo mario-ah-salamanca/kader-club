@@ -12,6 +12,8 @@ The format follows a simple human-readable structure.
   build scripts.
 - Supabase Auth signup, login, logout, cookie refresh, and protected app layout.
 - Supabase local project setup and initial First Collection Loop schema migration.
+- Prototype-inspired First Collection Loop UI surfaces for landing, auth,
+  onboarding, catalog preview, collection preview, and protected dashboard.
 - Initial GitHub project management structure.
 - Product strategy documentation.
 - MVP roadmap.
@@ -23,6 +25,8 @@ The format follows a simple human-readable structure.
 ### Changed
 
 - Migrated project planning source of truth from Google Drive to GitHub-ready Markdown.
+- Extracted reusable catalog/card presentation components and tightened
+  production check boundaries so the Vite prototype remains a reference input.
 
 ### Removed
 

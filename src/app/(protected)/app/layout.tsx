@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { redirect } from "next/navigation";
+import { AppSidebar } from "@/features/app/app-sidebar";
 import { logoutAction } from "@/features/auth/actions";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
@@ -17,22 +17,11 @@ export default async function ProtectedAppLayout({
 
   return (
     <div className="app-layout">
-      <aside className="sidebar">
-        <Link className="brand" href="/app">
-          <span className="brand-mark">KC</span>
-          <span>Kader Club</span>
-        </Link>
-        <nav aria-label="App navigation">
-          <Link aria-current="page" href="/app">
-            Dashboard
-          </Link>
-          <Link href="/app">My Collection</Link>
-          <Link href="/app">Catalog</Link>
-          <form action={logoutAction}>
-            <button type="submit">Log out</button>
-          </form>
-        </nav>
-      </aside>
+      <AppSidebar>
+        <form action={logoutAction}>
+          <button type="submit">Log out</button>
+        </form>
+      </AppSidebar>
       <main className="app-main">{children}</main>
     </div>
   );
