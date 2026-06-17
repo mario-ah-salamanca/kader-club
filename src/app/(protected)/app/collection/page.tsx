@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { dashboardCards, formatCurrencyEur } from "@/features/catalog/demo-cards";
+import { BinderCard } from "@/features/catalog/card-components";
+import { dashboardCards } from "@/features/catalog/demo-cards";
 
 export default function CollectionPage() {
   return (
@@ -16,22 +17,12 @@ export default function CollectionPage() {
 
       <div className="binder-grid full">
         {dashboardCards.map((card) => (
-          <article className={`binder-card tone-${card.accent}`} key={card.id}>
-            <div className="binder-card-art">
-              <span>{card.position}</span>
-            </div>
-            <div className="binder-card-copy">
-              <span>{card.manufacturer}</span>
-              <h2>{card.playerName}</h2>
-              <p>
-                {card.club} · {card.parallel}
-              </p>
-              <div>
-                <strong>{formatCurrencyEur(card.estimatedValueEur)}</strong>
-                <em>{card.tradeStatus.replaceAll("_", " ")}</em>
-              </div>
-            </div>
-          </article>
+          <BinderCard
+            card={card}
+            footer="trade"
+            headingLevel="h2"
+            key={card.id}
+          />
         ))}
       </div>
 

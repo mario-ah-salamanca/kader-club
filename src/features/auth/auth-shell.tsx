@@ -27,7 +27,7 @@ export function AuthShell({
         </div>
         <div className="auth-showcase-copy">
           <span>
-            <SparklesIcon /> Elite collection workspace
+            <SparklesIcon /> Premium binder workspace
           </span>
           <h2>Your digital binder awaits.</h2>
           <p>

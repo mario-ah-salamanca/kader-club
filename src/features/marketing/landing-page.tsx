@@ -1,7 +1,7 @@
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRightIcon, CheckIcon, SparklesIcon } from "@/components/icons";
-import { dashboardCards, formatCurrencyEur } from "@/features/catalog/demo-cards";
+import { FoilCardPreview } from "@/features/catalog/card-components";
+import { dashboardCards } from "@/features/catalog/demo-cards";
 
 const featureCards = [
   {
@@ -21,6 +21,24 @@ const featureCards = [
     description:
       "Mark cards as open to offers and prepare future collector matches while staying far away from marketplace checkout.",
     metric: "Discovery, not escrow"
+  }
+];
+
+const productSignals = [
+  {
+    label: "Activation target",
+    value: "10 cards",
+    supporting: "+ 1 wishlist item"
+  },
+  {
+    label: "Catalog principle",
+    value: "Curated",
+    supporting: "quality over volume"
+  },
+  {
+    label: "MVP guardrail",
+    value: "No checkout",
+    supporting: "collection first"
   }
 ];
 
@@ -75,30 +93,19 @@ export function MarketingLandingPage() {
 
         <div className="hero-binder" aria-label="Premium card binder preview">
           {dashboardCards.map((card, index) => (
-            <article
-              className={`foil-card foil-card-${card.accent}`}
-              key={card.id}
-              style={{ "--card-tilt": `${(index - 1) * 4}deg` } as CSSProperties}
-            >
-              <div className="foil-card-sheen" />
-              <div className="foil-card-topline">
-                <span>{card.manufacturer}</span>
-                <span>{card.rarity}</span>
-              </div>
-              <div>
-                <span className="card-position">{card.position}</span>
-                <h2>{card.playerName}</h2>
-                <p>
-                  {card.club} · {card.setName}
-                </p>
-              </div>
-              <div className="foil-card-footer">
-                <span>{formatCurrencyEur(card.estimatedValueEur)}</span>
-                <span>{card.confidence}</span>
-              </div>
-            </article>
+            <FoilCardPreview card={card} index={index} key={card.id} />
           ))}
         </div>
+      </section>
+
+      <section className="proof-strip" aria-label="Kader Club MVP signals">
+        {productSignals.map((signal) => (
+          <div key={signal.label}>
+            <strong>{signal.value}</strong>
+            <span>{signal.label}</span>
+            <small>{signal.supporting}</small>
+          </div>
+        ))}
       </section>
 
       <section className="feature-section">

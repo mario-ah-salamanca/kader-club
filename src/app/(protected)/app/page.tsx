@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRightIcon, CheckIcon, SparklesIcon } from "@/components/icons";
+import { ArrowRightIcon, SparklesIcon } from "@/components/icons";
+import { BinderCard } from "@/features/catalog/card-components";
 import {
   dashboardCards,
   demoCards,
@@ -78,24 +79,7 @@ export default async function AppDashboardPage() {
         </div>
         <div className="binder-grid">
           {dashboardCards.map((card) => (
-            <article className={`binder-card tone-${card.accent}`} key={card.id}>
-              <div className="binder-card-art">
-                <span>{card.position}</span>
-              </div>
-              <div className="binder-card-copy">
-                <span>{card.manufacturer}</span>
-                <h3>{card.playerName}</h3>
-                <p>
-                  {card.club} · {card.parallel}
-                </p>
-                <div>
-                  <strong>{formatCurrencyEur(card.estimatedValueEur)}</strong>
-                  <em>
-                    <CheckIcon /> {card.confidence}
-                  </em>
-                </div>
-              </div>
-            </article>
+            <BinderCard card={card} footer="confidence" key={card.id} />
           ))}
         </div>
       </section>

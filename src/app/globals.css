@@ -94,7 +94,7 @@ button:disabled {
   color: var(--night);
   font-size: 0.88rem;
   font-weight: 950;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .button,
@@ -243,9 +243,9 @@ button:disabled {
   max-width: 11ch;
   margin: 1rem 0 0;
   color: white;
-  font-size: clamp(3.5rem, 8vw, 7.2rem);
+  font-size: 5.8rem;
   line-height: 0.88;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
 }
 
 .marketing-hero-copy p,
@@ -412,7 +412,7 @@ button:disabled {
   color: white;
   font-size: 2.1rem;
   line-height: 0.9;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .foil-card p {
@@ -422,6 +422,50 @@ button:disabled {
   color: rgb(255 255 255 / 64%);
   font-size: 0.86rem;
   line-height: 1.45;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid rgb(255 255 255 / 8%);
+  background: #0a0c0b;
+  color: white;
+}
+
+.proof-strip div {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: clamp(1.5rem, 4vw, 2.4rem) 1rem;
+  text-align: center;
+}
+
+.proof-strip div + div {
+  border-left: 1px solid rgb(255 255 255 / 8%);
+}
+
+.proof-strip strong {
+  color: var(--mint);
+  font-size: 2.8rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.proof-strip span,
+.proof-strip small {
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.proof-strip span {
+  color: rgb(225 227 222 / 72%);
+  font-size: 0.72rem;
+}
+
+.proof-strip small {
+  color: rgb(225 227 222 / 42%);
+  font-size: 0.68rem;
 }
 
 .feature-section {
@@ -445,9 +489,9 @@ button:disabled {
 .section-heading h2 {
   margin: 0.8rem 0 0;
   color: var(--ink);
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: 3rem;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .section-heading p {
@@ -522,9 +566,9 @@ button:disabled {
 
 .binder-story h2 {
   margin: 1rem 0 0;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: 3rem;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .binder-story p {
@@ -581,7 +625,7 @@ button:disabled {
   color: white;
   font-size: 2.5rem;
   line-height: 0.9;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
 }
 
 .auth-card-mockup small {
@@ -611,9 +655,9 @@ button:disabled {
   max-width: 11ch;
   margin: 0.8rem 0 0;
   color: white;
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: 3rem;
   line-height: 0.92;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
 }
 
 .auth-showcase-copy p {
@@ -652,9 +696,9 @@ button:disabled {
 .auth-panel h1 {
   margin: 0.9rem 0 0;
   color: white;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 2.5rem;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .auth-panel p {
@@ -800,8 +844,8 @@ button:disabled {
 .verify-panel h1 {
   margin: 1.3rem 0 0;
   color: white;
-  font-size: clamp(2rem, 5vw, 3rem);
-  letter-spacing: -0.06em;
+  font-size: 2.5rem;
+  letter-spacing: 0;
 }
 
 .verify-panel p {
@@ -869,6 +913,23 @@ button:disabled {
   padding: clamp(1rem, 4vw, 3rem);
 }
 
+.app-layout:has(.onboarding-page) {
+  grid-template-columns: 1fr;
+}
+
+.app-layout:has(.onboarding-page) .sidebar {
+  display: none;
+}
+
+.app-main:has(.onboarding-page) {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 18% 16%, rgb(176 241 199 / 14%), transparent 24rem),
+    radial-gradient(circle at 84% 72%, rgb(249 188 69 / 10%), transparent 26rem),
+    var(--night);
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
 .dashboard {
   max-width: 75rem;
 }
@@ -884,9 +945,9 @@ button:disabled {
 .dashboard h1 {
   margin: 0.8rem 0 0;
   color: var(--ink);
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: 3.4rem;
   line-height: 0.95;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
 }
 
 .dashboard-hero p,
@@ -956,8 +1017,8 @@ button:disabled {
   display: block;
   margin-top: 1.1rem;
   color: var(--ink);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  letter-spacing: -0.05em;
+  font-size: 2.25rem;
+  letter-spacing: 0;
 }
 
 .dashboard-section {
@@ -1005,7 +1066,7 @@ button:disabled {
   margin: 0.35rem 0 0;
   color: var(--ink);
   font-size: 1.35rem;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .binder-card-copy p {
@@ -1058,7 +1119,7 @@ button:disabled {
 
 .onboarding-page {
   display: grid;
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 5rem);
   place-items: start center;
   gap: 1.5rem;
 }
@@ -1068,17 +1129,17 @@ button:disabled {
   width: min(100%, 44rem);
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
-  border: 1px solid rgb(64 73 66 / 14%);
+  border: 1px solid rgb(176 241 199 / 14%);
   border-radius: 1.2rem;
-  background: rgb(255 255 255 / 75%);
+  background: rgb(29 32 30 / 72%);
   padding: 1rem;
-  box-shadow: 0 1rem 2.8rem rgb(20 23 31 / 6%);
+  box-shadow: 0 1rem 2.8rem rgb(0 0 0 / 16%);
 }
 
 .onboarding-step {
   display: grid;
   gap: 0.45rem;
-  color: rgb(20 23 31 / 38%);
+  color: rgb(225 227 222 / 42%);
   text-align: center;
 }
 
@@ -1092,7 +1153,7 @@ button:disabled {
 .onboarding-step div {
   height: 0.38rem;
   border-radius: 999px;
-  background: rgb(64 73 66 / 18%);
+  background: rgb(225 227 222 / 14%);
 }
 
 .onboarding-step strong {
@@ -1101,12 +1162,12 @@ button:disabled {
 
 .onboarding-step[data-active="true"],
 .onboarding-step[data-complete="true"] {
-  color: var(--accent-strong);
+  color: var(--mint);
 }
 
 .onboarding-step[data-active="true"] div,
 .onboarding-step[data-complete="true"] div {
-  background: var(--accent);
+  background: var(--mint);
 }
 
 .onboarding-panel {
@@ -1133,9 +1194,9 @@ button:disabled {
 .onboarding-panel h1 {
   margin: 1rem 0 0;
   color: white;
-  font-size: clamp(2.1rem, 5vw, 4rem);
+  font-size: 3rem;
   line-height: 0.96;
-  letter-spacing: -0.07em;
+  letter-spacing: 0;
 }
 
 .onboarding-panel h1 span {
@@ -1393,12 +1454,43 @@ button:disabled {
 .catalog-row h2 {
   margin: 0;
   color: var(--ink);
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .catalog-row p {
   margin: 0.35rem 0 0;
   color: var(--muted);
+}
+
+.catalog-row-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+  margin: 0.8rem 0 0;
+}
+
+.catalog-row-details div {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  border-radius: 999px;
+  background: rgb(12 122 91 / 7%);
+  padding: 0.28rem 0.55rem;
+}
+
+.catalog-row-details dt {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.catalog-row-details dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .catalog-row-meta {
@@ -1468,9 +1560,15 @@ button:disabled {
 
   .feature-grid,
   .binder-grid,
+  .proof-strip,
   .stat-grid,
   .selection-grid {
     grid-template-columns: 1fr;
+  }
+
+  .proof-strip div + div {
+    border-top: 1px solid rgb(255 255 255 / 8%);
+    border-left: 0;
   }
 
   .binder-story,
@@ -1502,6 +1600,26 @@ button:disabled {
 
   .marketing-hero-copy h1 {
     font-size: 3.5rem;
+  }
+
+  .section-heading h1,
+  .section-heading h2,
+  .binder-story h2,
+  .dashboard-hero h1,
+  .dashboard h1,
+  .onboarding-panel h1 {
+    font-size: 2.35rem;
+  }
+
+  .auth-showcase-copy h2,
+  .auth-panel h1,
+  .verify-panel h1 {
+    font-size: 2.2rem;
+  }
+
+  .proof-strip strong,
+  .stat strong {
+    font-size: 2rem;
   }
 
   .foil-card {

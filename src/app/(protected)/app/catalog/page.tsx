@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SearchIcon } from "@/components/icons";
-import { demoCards, formatCurrencyEur } from "@/features/catalog/demo-cards";
+import { CatalogCardRow } from "@/features/catalog/card-components";
+import { demoCards } from "@/features/catalog/demo-cards";
 
 export default function CatalogPage() {
   return (
@@ -18,19 +19,7 @@ export default function CatalogPage() {
 
       <div className="catalog-list">
         {demoCards.map((card) => (
-          <article className="catalog-row" key={card.id}>
-            <div className={`mini-card-art tone-${card.accent}`} />
-            <div>
-              <h2>{card.playerName}</h2>
-              <p>
-                {card.club} · {card.season} · {card.setName} · {card.parallel}
-              </p>
-            </div>
-            <div className="catalog-row-meta">
-              <strong>{formatCurrencyEur(card.estimatedValueEur)}</strong>
-              <span>{card.confidence} confidence</span>
-            </div>
-          </article>
+          <CatalogCardRow card={card} key={card.id} />
         ))}
       </div>
 

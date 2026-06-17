@@ -119,3 +119,17 @@ export function formatCurrencyEur(value: number) {
     style: "currency"
   }).format(value);
 }
+
+export function formatTradeStatus(status: DemoCard["tradeStatus"]) {
+  return status.replaceAll("_", " ");
+}
+
+export function formatCatalogSummary(card: DemoCard) {
+  return [
+    card.club,
+    card.season,
+    card.manufacturer,
+    card.setName,
+    card.parallel
+  ].join(" · ");
+}

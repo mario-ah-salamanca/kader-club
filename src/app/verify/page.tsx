@@ -21,7 +21,7 @@ export default async function VerifyPage({ searchParams }: VerifyPageProps) {
           <div className="auth-card-mockup secure-card">
             <ShieldCheckIcon />
             <strong>Secure Vault</strong>
-            <small>Protecting your elite collection.</small>
+            <small>Protecting your private collection.</small>
           </div>
         </div>
         <div className="verify-panel">

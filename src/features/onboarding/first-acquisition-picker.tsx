@@ -10,6 +10,7 @@ import {
   StarIcon,
   TrophyIcon
 } from "@/components/icons";
+import { MiniCardArt } from "@/features/catalog/card-components";
 import { demoCards, formatCurrencyEur } from "@/features/catalog/demo-cards";
 
 export function FirstAcquisitionPicker() {
@@ -55,7 +56,7 @@ export function FirstAcquisitionPicker() {
           user_cards, wishlist, and RLS-backed profile tables.
         </p>
         <div className="completion-card">
-          <div className={`mini-card-art tone-${selectedCard.accent}`} />
+          <MiniCardArt card={selectedCard} />
           <div>
             <strong>{selectedCard.playerName}</strong>
             <span>
@@ -109,9 +110,9 @@ export function FirstAcquisitionPicker() {
               onClick={() => setSelectedCardId(card.id)}
               type="button"
             >
-              <span className={`mini-card-art tone-${card.accent}`}>
+              <MiniCardArt card={card}>
                 {isSelected && <CheckIcon />}
-              </span>
+              </MiniCardArt>
               <span className="acquisition-copy">
                 <strong>{card.playerName}</strong>
                 <small>
