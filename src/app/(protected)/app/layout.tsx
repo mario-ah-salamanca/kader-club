@@ -17,7 +17,11 @@ export default async function ProtectedAppLayout({
 
   return (
     <div className="app-layout">
-      <AppSidebar logoutAction={logoutAction} />
+      <AppSidebar>
+        <form action={logoutAction}>
+          <button type="submit">Log out</button>
+        </form>
+      </AppSidebar>
       <main className="app-main">{children}</main>
     </div>
   );
