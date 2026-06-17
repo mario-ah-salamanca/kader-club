@@ -52,6 +52,8 @@ A user adds at least 10 cards and creates at least 1 wishlist item.
 - [`docs/data-model.md`](docs/data-model.md) — catalog, collection, pricing, and trade data model
 - [`docs/planning/sprint-1-first-collection-loop.md`](docs/planning/sprint-1-first-collection-loop.md) — first implementation sprint
 - [`docs/project-management.md`](docs/project-management.md) — GitHub workflow
+- [`docs/ai-workflow.md`](docs/ai-workflow.md) — AI-assisted development workflow and context hierarchy
+- [`docs/prompts/`](docs/prompts) — reusable prompts for planning, execution, review, debugging, refactoring, and progress documentation
 - [`docs/decisions/`](docs/decisions) — architecture and product decision records
 
 ## Current Priority
