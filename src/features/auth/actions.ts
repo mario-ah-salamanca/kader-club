@@ -6,17 +6,23 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 type AuthFields = {
   email: string;
   password: string;
+  fullName?: string;
 };
 
-function readAuthFields(formData: FormData): AuthFields | string {
+function readAuthFields(
+  formData: FormData,
+  options: { requireFullName?: boolean } = {}
+): AuthFields | string {
   const email = formData.get("email");
   const password = formData.get("password");
+  const fullName = formData.get("fullName");
 
   if (typeof email !== "string" || typeof password !== "string") {
     return "Email and password are required.";
   }
 
   const trimmedEmail = email.trim().toLowerCase();
+  const trimmedFullName = typeof fullName === "string" ? fullName.trim() : "";
 
   if (!trimmedEmail || !password) {
     return "Email and password are required.";
@@ -30,8 +36,13 @@ function readAuthFields(formData: FormData): AuthFields | string {
     return "Password must be at least 6 characters.";
   }
 
+  if (options.requireFullName && !trimmedFullName) {
+    return "Full name is required.";
+  }
+
   return {
     email: trimmedEmail,
+    fullName: trimmedFullName || undefined,
     password
   };
 }
@@ -45,15 +56,20 @@ function authRedirect(
 }
 
 export async function signupAction(formData: FormData) {
-  const fields = readAuthFields(formData);
+  const fields = readAuthFields(formData, { requireFullName: true });
 
   if (typeof fields === "string") {
     authRedirect("/signup", "error", fields);
   }
 
   const supabase = await createServerSupabaseClient();
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email: fields.email,
+    options: {
+      data: {
+        full_name: fields.fullName
+      }
+    },
     password: fields.password
   });
 
@@ -61,7 +77,11 @@ export async function signupAction(formData: FormData) {
     authRedirect("/signup", "error", error.message);
   }
 
-  redirect("/app");
+  if (data.session) {
+    redirect("/app/onboarding/welcome");
+  }
+
+  redirect(`/verify?email=${encodeURIComponent(fields.email)}`);
 }
 
 export async function loginAction(formData: FormData) {
