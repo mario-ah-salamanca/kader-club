@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Brand } from "@/components/brand";
@@ -12,10 +13,10 @@ const navItems = [
 ];
 
 type AppSidebarProps = {
-  logoutAction: (formData: FormData) => void | Promise<void>;
+  children: ReactNode;
 };
 
-export function AppSidebar({ logoutAction }: AppSidebarProps) {
+export function AppSidebar({ children }: AppSidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -37,9 +38,7 @@ export function AppSidebar({ logoutAction }: AppSidebarProps) {
             </Link>
           );
         })}
-        <form action={logoutAction}>
-          <button type="submit">Log out</button>
-        </form>
+        {children}
       </nav>
     </aside>
   );
