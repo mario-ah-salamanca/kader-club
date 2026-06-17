@@ -18,6 +18,7 @@ The format follows a simple human-readable structure.
 
 ### Changed
 
+- Improved root `AGENTS.md` with clearer scope, repository structure, execution commands, verification rules, Supabase/RLS guidance, and reduced process duplication.
 - Migrated project planning source of truth from Google Drive to GitHub-ready Markdown.
 
 ### Removed
