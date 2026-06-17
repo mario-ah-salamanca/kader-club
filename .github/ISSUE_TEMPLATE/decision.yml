@@ -1,0 +1,40 @@
+name: Decision
+description: A product or technical decision that needs to be made.
+title: "[Decision]: "
+labels: ["type: decision", "status: needs-decision"]
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision Needed
+      description: What exactly must be decided?
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      value: |
+        ## Option A
+
+        ## Option B
+
+        ## Option C
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: Which option is recommended and why?
+    validations:
+      required: false
+
+  - type: textarea
+    id: deadline
+    attributes:
+      label: Date Needed
+    validations:
+      required: false
